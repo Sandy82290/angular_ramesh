@@ -1,0 +1,35 @@
+.area-card {
+  padding: 1.8rem;
+  text-align: center;
+  &__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(13, 71, 161, 0.08);
+    color: var(--rk-blue);
+    display: grid;
+    place-items: center;
+    margin: 0 auto 1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+    mat-icon { font-size: 32px; width: 32px; height: 32px; }
+  }
+  &:hover .area-card__icon { background: var(--rk-blue); color: var(--rk-yellow); }
+  h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+  p { color: var(--rk-muted); }
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    margin-top: 0.4rem;
+    mat-icon { font-size: 18px; width: 18px; height: 18px; }
+  }
+}
+
+.map {
+  border-radius: var(--rk-radius);
+  overflow: hidden;
+  box-shadow: var(--rk-shadow);
+  line-height: 0;
+  iframe { display: block; width: 100%; }
+}

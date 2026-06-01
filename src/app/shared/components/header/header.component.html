@@ -1,0 +1,62 @@
+<!-- Top utility bar -->
+<div class="topbar d-none d-lg-block">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="topbar__left">
+      <span><mat-icon>location_on</mat-icon> {{ business.addressLine }}</span>
+      <span><mat-icon>schedule</mat-icon> {{ business.hours }}</span>
+    </div>
+    <div class="topbar__right">
+      <a [href]="whatsappLink" target="_blank" rel="noopener"><mat-icon>chat</mat-icon> WhatsApp</a>
+      <a [href]="callLink"><mat-icon>call</mat-icon> {{ business.phoneDisplay }}</a>
+    </div>
+  </div>
+</div>
+
+<!-- Main header -->
+<header class="header" [class.header--scrolled]="scrolled()">
+  <div class="container header__inner">
+    <a routerLink="/" class="brand" (click)="closeMenu()" aria-label="RK Repairing home">
+      <span class="brand__mark"><mat-icon>build</mat-icon></span>
+      <span class="brand__text">
+        <span class="brand__name">RK <strong>Repairing</strong></span>
+        <span class="brand__tag">{{ business.tagline }}</span>
+      </span>
+    </a>
+
+    <nav class="nav" [class.nav--open]="menuOpen()" aria-label="Primary">
+      <button class="nav__close d-lg-none" (click)="closeMenu()" aria-label="Close menu">
+        <mat-icon>close</mat-icon>
+      </button>
+      @for (link of links; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+          (click)="closeMenu()"
+          >{{ link.label }}</a
+        >
+      }
+      <a [href]="callLink" class="nav__cta d-lg-none btn btn-rk-primary">
+        <mat-icon>call</mat-icon> Call {{ business.phoneDisplay }}
+      </a>
+    </nav>
+
+    <div class="header__actions">
+      <a [href]="callLink" class="header__phone d-none d-md-inline-flex">
+        <span class="header__phone-icon"><mat-icon>call</mat-icon></span>
+        <span class="header__phone-text">
+          <small>Call Now</small>
+          <strong>{{ business.phoneDisplay }}</strong>
+        </span>
+      </a>
+      <a routerLink="/contact" class="btn btn-rk-yellow d-none d-sm-inline-flex">Book Service</a>
+      <button class="header__burger d-lg-none" (click)="toggleMenu()" aria-label="Open menu">
+        <mat-icon>{{ menuOpen() ? 'close' : 'menu' }}</mat-icon>
+      </button>
+    </div>
+  </div>
+</header>
+
+@if (menuOpen()) {
+  <div class="nav__overlay d-lg-none" (click)="closeMenu()"></div>
+}

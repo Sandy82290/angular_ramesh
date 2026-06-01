@@ -1,0 +1,67 @@
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Brand -->
+      <div class="col-lg-4 col-md-6">
+        <div class="brand">
+          <span class="brand__mark"><mat-icon>build</mat-icon></span>
+          <span class="brand__name">RK <strong>Repairing</strong></span>
+        </div>
+        <p class="footer__about">
+          Your trusted partner for same-day home appliance repair in South Delhi. All brands,
+          genuine spare parts, expert technicians — right at your doorstep.
+        </p>
+        <div class="footer__social">
+          <a [href]="whatsappLink" target="_blank" rel="noopener" aria-label="WhatsApp"><mat-icon>chat</mat-icon></a>
+          <a [href]="callLink" aria-label="Call"><mat-icon>call</mat-icon></a>
+          <a href="mailto:{{ business.email }}" aria-label="Email"><mat-icon>mail</mat-icon></a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="col-lg-3 col-md-6">
+        <h4 class="footer__title">Our Services</h4>
+        <ul class="footer__list">
+          @for (s of services; track s.id) {
+            <li><a routerLink="/services" fragment="{{ s.id }}">{{ s.title }}</a></li>
+          }
+        </ul>
+      </div>
+
+      <!-- Areas -->
+      <div class="col-lg-2 col-md-6">
+        <h4 class="footer__title">Service Areas</h4>
+        <ul class="footer__list footer__list--compact">
+          @for (a of areas; track a.name) {
+            <li><a routerLink="/service-areas">{{ a.name }}</a></li>
+          }
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-lg-3 col-md-6">
+        <h4 class="footer__title">Get In Touch</h4>
+        <ul class="footer__contact">
+          <li><mat-icon>call</mat-icon> <a [href]="callLink">{{ business.phoneDisplay }}</a></li>
+          <li><mat-icon>mail</mat-icon> <a href="mailto:{{ business.email }}">{{ business.email }}</a></li>
+          <li><mat-icon>location_on</mat-icon> {{ business.addressLine }}</li>
+          <li><mat-icon>schedule</mat-icon> {{ business.hours }}</li>
+        </ul>
+        <a [href]="callLink" class="btn btn-rk-yellow mt-2">
+          <mat-icon>call</mat-icon> Call {{ business.phoneDisplay }}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <span>© {{ year }} RK Repairing. All rights reserved.</span>
+      <span class="footer__bottom-links">
+        <a routerLink="/about">About</a>
+        <a routerLink="/services">Services</a>
+        <a routerLink="/contact">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>

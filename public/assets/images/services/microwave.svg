@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Microwave oven">
+  <defs>
+    <linearGradient id="mwbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8f0fc"/>
+      <stop offset="1" stop-color="#d3e3fb"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="360" fill="url(#mwbg)"/>
+  <rect x="90" y="120" width="300" height="150" rx="16" fill="#ffffff" stroke="#0d47a1" stroke-width="4"/>
+  <rect x="110" y="142" width="180" height="106" rx="10" fill="#0d2c63"/>
+  <circle cx="200" cy="195" r="34" fill="none" stroke="#ffc107" stroke-width="4" opacity=".8"/>
+  <circle cx="200" cy="195" r="14" fill="#ffc107" opacity=".5"/>
+  <rect x="305" y="142" width="65" height="106" rx="8" fill="#eaf1fc"/>
+  <circle cx="337" cy="170" r="11" fill="#0d47a1"/>
+  <rect x="320" y="195" width="34" height="6" rx="3" fill="#0d47a1"/>
+  <rect x="320" y="210" width="34" height="6" rx="3" fill="#0d47a1"/>
+  <rect x="320" y="225" width="34" height="6" rx="3" fill="#ffc107"/>
+</svg>

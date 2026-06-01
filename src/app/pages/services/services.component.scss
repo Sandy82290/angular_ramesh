@@ -1,0 +1,75 @@
+.svc {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--rk-border);
+  scroll-margin-top: 110px;
+
+  &:last-of-type { border-bottom: 0; }
+
+  &__media {
+    position: relative;
+    border-radius: var(--rk-radius);
+    overflow: hidden;
+    box-shadow: var(--rk-shadow);
+    img { width: 100%; height: auto; display: block; }
+  }
+  &__badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: var(--rk-blue);
+    color: var(--rk-yellow);
+    display: grid;
+    place-items: center;
+    box-shadow: var(--rk-shadow-sm);
+    mat-icon { font-size: 30px; width: 30px; height: 30px; }
+  }
+
+  &__title { font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0.4rem 0 0.8rem; }
+  &__desc { color: var(--rk-muted); font-size: 1.05rem; margin-bottom: 1.4rem; }
+
+  &__sub {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--rk-text);
+    margin: 1.2rem 0 0.7rem;
+  }
+
+  &__chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.6rem;
+  }
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  &--brand {
+    background: rgba(13, 71, 161, 0.08);
+    color: var(--rk-blue);
+    border: 1px solid rgba(13, 71, 161, 0.15);
+  }
+}
+
+.problem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: var(--rk-text);
+  mat-icon { color: #1b7a43; font-size: 20px; width: 20px; height: 20px; }
+}
+
+@media (max-width: 575.98px) {
+  .svc__actions .btn { flex: 1 1 100%; justify-content: center; }
+}

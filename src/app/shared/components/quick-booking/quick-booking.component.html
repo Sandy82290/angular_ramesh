@@ -1,0 +1,14 @@
+@if (ui.quickBookingOpen()) {
+  <div class="qb-backdrop" (click)="close()"></div>
+  <div class="qb" role="dialog" aria-modal="true" aria-labelledby="qb-title">
+    <button class="qb__close" (click)="close()" aria-label="Close booking form">
+      <mat-icon>close</mat-icon>
+    </button>
+    <div class="qb__head">
+      <span class="qb__badge"><mat-icon>bolt</mat-icon> Same Day Service</span>
+      <h3 id="qb-title">Book Your Repair in 30 Seconds</h3>
+      <p>Fill the form and our technician will call you to confirm your slot.</p>
+    </div>
+    <app-booking-form [showMessage]="false"></app-booking-form>
+  </div>
+}

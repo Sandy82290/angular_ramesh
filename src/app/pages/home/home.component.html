@@ -1,0 +1,196 @@
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 hero__content">
+        <span class="hero__badge"><mat-icon>bolt</mat-icon> Same Day Service in South Delhi</span>
+        <h1 class="hero__title">
+          Expert Appliance Repair <span class="accent">Services at Your Doorstep</span>
+        </h1>
+        <p class="hero__subtitle">
+          Same day Washing Machine, Refrigerator &amp; Microwave repair service in South Delhi.
+          All brands supported by trusted, verified technicians.
+        </p>
+
+        <div class="hero__actions">
+          <a [href]="callLink" class="btn btn-rk-yellow btn-lg-rk">
+            <mat-icon>call</mat-icon> Call Now
+          </a>
+          <a routerLink="/contact" class="btn btn-rk-primary btn-lg-rk">
+            <mat-icon>event_available</mat-icon> Book Service
+          </a>
+          <a [href]="whatsappLink" target="_blank" rel="noopener" class="btn btn-rk-whatsapp btn-lg-rk">
+            <mat-icon>chat</mat-icon> WhatsApp Us
+          </a>
+        </div>
+
+        <a [href]="callLink" class="hero__phone">
+          <span class="hero__phone-icon"><mat-icon>call</mat-icon></span>
+          <span>
+            <small>Call us 7 days a week</small>
+            <strong>{{ business.phoneDisplay }}</strong>
+          </span>
+        </a>
+
+        <ul class="hero__usp">
+          <li><mat-icon>verified</mat-icon> All Brands</li>
+          <li><mat-icon>home</mat-icon> Doorstep Service</li>
+          <li><mat-icon>savings</mat-icon> Affordable Charges</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-6 hero__media">
+        <img
+          src="assets/images/hero.svg"
+          alt="Professional technician repairing a washing machine at a South Delhi home"
+          width="640"
+          height="520"
+          fetchpriority="high"
+        />
+        <div class="hero__rating">
+          <span class="stars">★★★★★</span>
+          <span><strong>4.9</strong> / 5 · 2000+ happy customers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<div class="trust">
+  <div class="container">
+    <div class="trust__grid">
+      @for (s of stats; track s.label) {
+        <div class="trust__item">
+          <mat-icon>{{ s.icon }}</mat-icon>
+          <div>
+            <strong>{{ s.value }}{{ s.suffix }}</strong>
+            <span>{{ s.label }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="section-eyebrow">Our Services</span>
+      <h2 class="section-title">Appliance Repairs We <span class="accent">Specialise In</span></h2>
+      <p class="section-subtitle">
+        From washing machines to deep freezers — every brand, every problem, fixed fast.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      @for (s of services; track s.id; let i = $index) {
+        <div class="col-lg-4 col-md-6" appReveal [revealDelay]="i * 90">
+          <article class="rk-card service-card">
+            <div class="service-card__media">
+              <img [src]="s.image" [alt]="s.title" width="400" height="300" loading="lazy" decoding="async" />
+              <span class="service-card__icon"><mat-icon>{{ s.icon }}</mat-icon></span>
+            </div>
+            <div class="service-card__body">
+              <h3>{{ s.title }}</h3>
+              <p>{{ s.short }}</p>
+              <a routerLink="/services" fragment="{{ s.id }}" class="service-card__link">
+                Learn More <mat-icon>arrow_forward</mat-icon>
+              </a>
+            </div>
+          </article>
+        </div>
+      }
+      <div class="col-lg-4 col-md-6" appReveal [revealDelay]="450">
+        <a routerLink="/services" class="rk-card service-card service-card--all">
+          <mat-icon>apps</mat-icon>
+          <h3>All Brands Service</h3>
+          <p>LG, Samsung, IFB, Whirlpool, Bosch &amp; more — view all services.</p>
+          <span class="btn btn-rk-yellow">View All Services</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE ============ -->
+<section class="section section--tint">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="section-eyebrow">Why Choose Us</span>
+      <h2 class="section-title">Why Choose <span class="accent">RK Repairing</span></h2>
+      <p class="section-subtitle">Trusted by thousands of families across South Delhi.</p>
+    </div>
+
+    <div class="row g-4">
+      @for (w of whyChoose; track w.title; let i = $index) {
+        <div class="col-lg-4 col-md-6" appReveal [revealDelay]="i * 80">
+          <div class="rk-card why-card">
+            <span class="why-card__icon"><mat-icon>{{ w.icon }}</mat-icon></span>
+            <h3>{{ w.title }}</h3>
+            <p>{{ w.text }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="section-eyebrow">How It Works</span>
+      <h2 class="section-title">Repair Done in <span class="accent">4 Easy Steps</span></h2>
+    </div>
+
+    <div class="row g-4 process">
+      @for (p of process; track p.step; let i = $index) {
+        <div class="col-lg-3 col-md-6" appReveal [revealDelay]="i * 120">
+          <div class="process__step">
+            <span class="process__num">{{ p.step }}</span>
+            <span class="process__icon"><mat-icon>{{ p.icon }}</mat-icon></span>
+            <h3>{{ p.title }}</h3>
+            <p>{{ p.text }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section class="section section--tint" id="book">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5" appReveal>
+        <span class="section-eyebrow">Book Online</span>
+        <h2 class="section-title">Book a Repair in <span class="accent">Under a Minute</span></h2>
+        <p class="section-subtitle">
+          Share a few details and our technician will call you to confirm a same-day slot.
+        </p>
+        <ul class="book-perks">
+          <li><mat-icon>check_circle</mat-icon> Free inspection on repair</li>
+          <li><mat-icon>check_circle</mat-icon> Transparent, upfront pricing</li>
+          <li><mat-icon>check_circle</mat-icon> Genuine spare parts &amp; warranty</li>
+        </ul>
+      </div>
+      <div class="col-lg-7" appReveal [revealDelay]="120">
+        <div class="rk-card p-4 p-md-5">
+          <app-booking-form [showMessage]="true"></app-booking-form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<app-testimonials></app-testimonials>
+
+<!-- ============ FAQ ============ -->
+<app-faq></app-faq>
+
+<!-- ============ CTA ============ -->
+<app-cta-banner></app-cta-banner>

@@ -1,0 +1,58 @@
+.rk-fab {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1500;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  &__btn {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease;
+
+    &:hover {
+      transform: scale(1.08);
+      color: #fff;
+    }
+
+    mat-icon {
+      font-size: 28px;
+      width: 28px;
+      height: 28px;
+    }
+
+    &--whatsapp {
+      background: #25d366;
+      animation: rk-pulse 2.2s infinite;
+    }
+    &--call {
+      background: var(--rk-blue);
+    }
+    &--book {
+      background: var(--rk-yellow);
+      color: var(--rk-text);
+      border: 0;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .rk-fab {
+    right: 14px;
+    bottom: 14px;
+    gap: 12px;
+    &__btn {
+      width: 52px;
+      height: 52px;
+    }
+  }
+}

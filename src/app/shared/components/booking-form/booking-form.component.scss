@@ -1,0 +1,40 @@
+.booking-form {
+  ::ng-deep .mat-mdc-form-field {
+    width: 100%;
+  }
+
+  &__note {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    justify-content: center;
+    font-size: 0.82rem;
+    color: var(--rk-muted);
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+    mat-icon { font-size: 16px; width: 16px; height: 16px; }
+  }
+
+  button mat-progress-spinner { display: inline-block; }
+}
+
+.form-alert {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 1.2rem;
+  border-radius: var(--rk-radius-sm);
+  font-weight: 500;
+  margin: 0.5rem 0;
+
+  &--success {
+    background: #e8f7ee;
+    color: #1b7a43;
+    border: 1px solid #b6e3c6;
+  }
+  &--error {
+    background: #fdecec;
+    color: #c0392b;
+    border: 1px solid #f5c6c6;
+  }
+}

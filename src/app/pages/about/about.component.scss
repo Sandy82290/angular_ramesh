@@ -1,0 +1,101 @@
+.about {
+  &__media {
+    position: relative;
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--rk-radius);
+      box-shadow: var(--rk-shadow);
+    }
+  }
+  &__exp {
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    background: var(--rk-yellow);
+    color: var(--rk-text);
+    border-radius: 16px;
+    padding: 1rem 1.4rem;
+    box-shadow: var(--rk-shadow);
+    text-align: center;
+    strong { display: block; font-size: 2rem; line-height: 1; color: var(--rk-blue); }
+    span { font-size: 0.82rem; font-weight: 600; }
+  }
+  &__points {
+    list-style: none;
+    padding: 0;
+    margin: 1.4rem 0 0;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 500;
+      margin-bottom: 0.7rem;
+      mat-icon { color: var(--rk-blue); }
+    }
+  }
+}
+
+.mv {
+  padding: 2rem;
+  &__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: rgba(13, 71, 161, 0.1);
+    color: var(--rk-blue);
+    display: grid;
+    place-items: center;
+    margin-bottom: 1rem;
+    mat-icon { font-size: 32px; width: 32px; height: 32px; }
+    &--yellow { background: rgba(255, 193, 7, 0.18); color: var(--rk-yellow-dark); }
+  }
+  h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+  p { color: var(--rk-muted); margin: 0; }
+}
+
+.counters {
+  background: linear-gradient(135deg, var(--rk-blue-dark), var(--rk-blue));
+  color: #fff;
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+}
+.counter {
+  &__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--rk-yellow);
+    display: grid;
+    place-items: center;
+    margin: 0 auto 0.8rem;
+    mat-icon { font-size: 32px; width: 32px; height: 32px; }
+  }
+  &__num {
+    display: block;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1;
+    color: #fff;
+  }
+  &__label { font-size: 0.95rem; opacity: 0.88; }
+}
+
+.value-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1.6rem;
+  align-items: flex-start;
+  &__icon {
+    flex: 0 0 auto;
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    background: rgba(13, 71, 161, 0.08);
+    color: var(--rk-blue);
+    display: grid;
+    place-items: center;
+  }
+  h3 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+  p { color: var(--rk-muted); margin: 0; }
+}

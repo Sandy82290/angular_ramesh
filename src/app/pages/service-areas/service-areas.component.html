@@ -1,0 +1,55 @@
+<app-page-hero
+  title="Areas We Serve"
+  subtitle="Fast, doorstep appliance repair across every major locality in South Delhi."
+></app-page-hero>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="section-eyebrow">Coverage</span>
+      <h2 class="section-title">Serving All of <span class="accent">South Delhi</span></h2>
+      <p class="section-subtitle">
+        Our technicians are stationed across South Delhi for the fastest possible response times.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      @for (a of areas; track a.name; let i = $index) {
+        <div class="col-lg-4 col-md-6" appReveal [revealDelay]="i * 70">
+          <div class="rk-card area-card">
+            <span class="area-card__icon"><mat-icon>{{ a.icon }}</mat-icon></span>
+            <h3>{{ a.name }}</h3>
+            <p>{{ a.note }}</p>
+            <a [href]="callLink" class="area-card__link">
+              <mat-icon>call</mat-icon> Book in {{ a.name }}
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Map -->
+<section class="section section--tint">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="section-eyebrow">Find Us</span>
+      <h2 class="section-title">Our <span class="accent">Service Map</span></h2>
+    </div>
+    <div class="map" appReveal>
+      <iframe
+        [src]="mapUrl"
+        title="RK Repairing service area map — South Delhi"
+        width="100%"
+        height="450"
+        style="border:0"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<app-cta-banner heading="Not Sure If We Cover Your Area?"></app-cta-banner>

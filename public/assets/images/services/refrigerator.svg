@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Refrigerator">
+  <defs>
+    <linearGradient id="rfbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8f0fc"/>
+      <stop offset="1" stop-color="#d3e3fb"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="360" fill="url(#rfbg)"/>
+  <rect x="175" y="50" width="130" height="270" rx="16" fill="#ffffff" stroke="#0d47a1" stroke-width="4"/>
+  <line x1="175" y1="150" x2="305" y2="150" stroke="#0d47a1" stroke-width="4"/>
+  <rect x="192" y="70" width="10" height="55" rx="5" fill="#0d47a1"/>
+  <rect x="192" y="175" width="10" height="90" rx="5" fill="#0d47a1"/>
+  <circle cx="285" cy="120" r="5" fill="#ffc107"/>
+  <rect x="220" y="95" width="70" height="6" rx="3" fill="#dceafb"/>
+  <rect x="220" y="190" width="70" height="6" rx="3" fill="#dceafb"/>
+  <rect x="220" y="215" width="55" height="6" rx="3" fill="#dceafb"/>
+  <rect x="220" y="240" width="60" height="6" rx="3" fill="#dceafb"/>
+  <path d="M330 90l18 0 0 30 -18 0z" fill="#ffc107" opacity=".85"/>
+  <text x="339" y="112" font-family="Poppins, sans-serif" font-size="20" fill="#0d47a1" text-anchor="middle">❄</text>
+</svg>

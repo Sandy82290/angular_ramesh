@@ -1,0 +1,209 @@
+/* ============================================================
+   RK Repairing — Global Styles
+   Angular Material (M3) theme + Bootstrap 5 + custom branding
+   ============================================================ */
+
+@use '@angular/material' as mat;
+
+// ---- Angular Material M3 theme -------------------------------------------
+html {
+  color-scheme: light;
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$yellow-palette,
+    ),
+    typography: (
+      plain-family: 'Poppins, Roboto, sans-serif',
+      brand-family: 'Poppins, sans-serif',
+    ),
+    density: 0,
+  ));
+}
+
+// ---- Bootstrap 5 ----------------------------------------------------------
+@import 'bootstrap/scss/bootstrap';
+
+// ---- Brand tokens ---------------------------------------------------------
+:root {
+  --rk-blue: #0d47a1;
+  --rk-blue-dark: #093170;
+  --rk-blue-light: #1565c0;
+  --rk-yellow: #ffc107;
+  --rk-yellow-dark: #e6ac00;
+  --rk-white: #ffffff;
+  --rk-text: #222222;
+  --rk-muted: #5b6472;
+  --rk-bg: #f5f8fd;
+  --rk-border: #e4eaf3;
+  --rk-shadow: 0 12px 40px rgba(13, 71, 161, 0.12);
+  --rk-shadow-sm: 0 6px 18px rgba(13, 71, 161, 0.08);
+  --rk-radius: 18px;
+  --rk-radius-sm: 12px;
+  --rk-header-h: 76px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', 'Roboto', sans-serif;
+  color: var(--rk-text);
+  background: var(--rk-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: var(--rk-text);
+  line-height: 1.2;
+}
+
+a {
+  color: var(--rk-blue);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover { color: var(--rk-blue-light); }
+
+// ---- Reusable layout helpers ---------------------------------------------
+.section {
+  padding: clamp(3rem, 6vw, 6rem) 0;
+}
+.section--tint { background: var(--rk-bg); }
+
+.section-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+}
+.section-eyebrow {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--rk-blue);
+  background: rgba(13, 71, 161, 0.08);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+  margin-bottom: 1rem;
+}
+.section-title .accent { color: var(--rk-blue); }
+.section-subtitle {
+  color: var(--rk-muted);
+  font-size: 1.05rem;
+}
+
+// ---- Buttons --------------------------------------------------------------
+.btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.8rem 1.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  border: 0;
+}
+.btn:hover { transform: translateY(-2px); }
+
+.btn-rk-primary {
+  background: var(--rk-blue);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(13, 71, 161, 0.3);
+}
+.btn-rk-primary:hover { background: var(--rk-blue-dark); color: #fff; }
+
+.btn-rk-yellow {
+  background: var(--rk-yellow);
+  color: var(--rk-text);
+  box-shadow: 0 10px 24px rgba(255, 193, 7, 0.4);
+}
+.btn-rk-yellow:hover { background: var(--rk-yellow-dark); color: var(--rk-text); }
+
+.btn-rk-whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+.btn-rk-whatsapp:hover { background: #1ebe5b; color: #fff; }
+
+.btn-rk-outline {
+  background: transparent;
+  color: var(--rk-blue);
+  border: 2px solid var(--rk-blue);
+}
+.btn-rk-outline:hover { background: var(--rk-blue); color: #fff; }
+
+.btn-lg-rk { padding: 1rem 2.2rem; font-size: 1.05rem; }
+
+// ---- Cards ----------------------------------------------------------------
+.rk-card {
+  background: #fff;
+  border-radius: var(--rk-radius);
+  border: 1px solid var(--rk-border);
+  box-shadow: var(--rk-shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+.rk-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--rk-shadow);
+}
+
+// ---- Star ratings ---------------------------------------------------------
+.stars { color: var(--rk-yellow); letter-spacing: 2px; font-size: 1.1rem; }
+
+// ---- Animations -----------------------------------------------------------
+@keyframes rk-fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes rk-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+@keyframes rk-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70%  { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.reveal {
+  opacity: 0;
+}
+.reveal.is-visible {
+  animation: rk-fade-up 0.7s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// ---- Material overrides ---------------------------------------------------
+.mat-mdc-snack-bar-container.rk-snack {
+  --mdc-snackbar-container-color: #0d47a1;
+  --mdc-snackbar-supporting-text-color: #fff;
+  --mat-snack-bar-button-color: #ffc107;
+}

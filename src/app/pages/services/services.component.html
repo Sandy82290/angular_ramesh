@@ -1,0 +1,76 @@
+<app-page-hero
+  title="Our Repair Services"
+  subtitle="Expert, same-day repair for every home appliance — all brands, genuine parts, fair charges."
+></app-page-hero>
+
+<section class="section">
+  <div class="container">
+    @for (s of services; track s.id; let i = $index) {
+      <article class="svc" [id]="s.id" appReveal>
+        <div class="row g-4 g-lg-5 align-items-center" [class.flex-lg-row-reverse]="i % 2 === 1">
+          <div class="col-lg-5">
+            <div class="svc__media">
+              <img [src]="s.image" [alt]="s.title" width="400" height="300" loading="lazy" decoding="async" />
+              <span class="svc__badge"><mat-icon>{{ s.icon }}</mat-icon></span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <span class="section-eyebrow">{{ s.title }}</span>
+            <h2 class="svc__title">{{ s.title }} in South Delhi</h2>
+            <p class="svc__desc">{{ s.description }}</p>
+
+            @if (s.brands?.length) {
+              <h3 class="svc__sub">Brands We Service</h3>
+              <div class="svc__chips">
+                @for (b of s.brands; track b) {
+                  <span class="chip chip--brand">{{ b }}</span>
+                }
+              </div>
+            }
+
+            @if (s.problems?.length) {
+              <h3 class="svc__sub">Common Problems We Fix</h3>
+              <div class="row g-2">
+                @for (p of s.problems; track p) {
+                  <div class="col-sm-6">
+                    <span class="problem"><mat-icon>check_circle</mat-icon> {{ p }}</span>
+                  </div>
+                }
+              </div>
+            }
+
+            <div class="svc__actions">
+              <a [href]="callLink" class="btn btn-rk-primary"><mat-icon>call</mat-icon> Book {{ s.title }}</a>
+              <a [href]="whatsappLink" target="_blank" rel="noopener" class="btn btn-rk-outline">
+                <mat-icon>chat</mat-icon> WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<!-- Booking -->
+<section class="section section--tint" id="book">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5" appReveal>
+        <span class="section-eyebrow">Book Now</span>
+        <h2 class="section-title">Request a <span class="accent">Service Booking</span></h2>
+        <p class="section-subtitle">
+          Tell us which appliance needs attention and we'll arrange a same-day technician visit.
+        </p>
+      </div>
+      <div class="col-lg-7" appReveal [revealDelay]="120">
+        <div class="rk-card p-4 p-md-5">
+          <app-booking-form [showMessage]="true"></app-booking-form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-faq></app-faq>
+<app-cta-banner heading="Appliance Acting Up? We Can Fix It Today."></app-cta-banner>

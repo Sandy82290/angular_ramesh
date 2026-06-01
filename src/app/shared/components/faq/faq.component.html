@@ -1,0 +1,25 @@
+<section class="section">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="section-eyebrow">FAQ</span>
+      <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
+      <p class="section-subtitle">Everything you need to know about our appliance repair service.</p>
+    </div>
+
+    <div class="faq" appReveal>
+      <mat-accordion>
+        @for (f of faqs; track f.question) {
+          <mat-expansion-panel class="faq__panel">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon>help_outline</mat-icon>
+                {{ f.question }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="faq__answer">{{ f.answer }}</p>
+          </mat-expansion-panel>
+        }
+      </mat-accordion>
+    </div>
+  </div>
+</section>

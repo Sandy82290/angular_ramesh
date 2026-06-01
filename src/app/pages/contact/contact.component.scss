@@ -1,0 +1,44 @@
+.info-card {
+  padding: 1.8rem 1.4rem;
+  text-align: center;
+  display: block;
+  color: var(--rk-text);
+  &__icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(13, 71, 161, 0.08);
+    color: var(--rk-blue);
+    display: grid;
+    place-items: center;
+    margin: 0 auto 0.9rem;
+    mat-icon { font-size: 30px; width: 30px; height: 30px; }
+    &--green { background: rgba(37, 211, 102, 0.14); color: #1ebe5b; }
+    &--yellow { background: rgba(255, 193, 7, 0.18); color: var(--rk-yellow-dark); }
+  }
+  h3 { font-size: 1.05rem; margin-bottom: 0.3rem; }
+  p { color: var(--rk-muted); margin: 0; word-break: break-word; }
+  &:hover { color: var(--rk-text); }
+}
+
+.hours-card {
+  padding: 1.8rem;
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed var(--rk-border);
+    span { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--rk-muted); }
+    mat-icon { color: var(--rk-blue); font-size: 20px; width: 20px; height: 20px; }
+    strong { color: var(--rk-text); }
+  }
+}
+
+.map {
+  border-radius: var(--rk-radius);
+  overflow: hidden;
+  box-shadow: var(--rk-shadow);
+  line-height: 0;
+  iframe { display: block; width: 100%; }
+}

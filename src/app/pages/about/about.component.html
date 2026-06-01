@@ -1,0 +1,110 @@
+<app-page-hero
+  title="About RK Repairing"
+  subtitle="South Delhi's trusted name in home appliance repair for over a decade."
+></app-page-hero>
+
+<!-- Story -->
+<section class="section">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6" appReveal>
+        <div class="about__media">
+          <img src="assets/images/team.svg" alt="RK Repairing expert technician team" width="600" height="460" loading="lazy" decoding="async" />
+          <div class="about__exp">
+            <strong>10+</strong>
+            <span>Years of Trusted Service</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" appReveal [revealDelay]="120">
+        <span class="section-eyebrow">Our Story</span>
+        <h2 class="section-title">Reliable Appliance Care, <span class="accent">Right at Your Door</span></h2>
+        <p>
+          RK Repairing began with a simple goal — to give South Delhi families a repair service they
+          can actually trust. What started as a small team of dedicated technicians has grown into one
+          of the area's most recommended home appliance repair companies.
+        </p>
+        <p>
+          Today we repair washing machines, refrigerators, microwaves and deep freezers of every major
+          brand, backed by genuine spare parts, transparent pricing and a friendly service warranty.
+        </p>
+        <ul class="about__points">
+          <li><mat-icon>verified</mat-icon> Background-verified, trained technicians</li>
+          <li><mat-icon>schedule</mat-icon> Same-day, on-time doorstep service</li>
+          <li><mat-icon>handshake</mat-icon> Honest advice and fair charges</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission / Vision -->
+<section class="section section--tint">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-6" appReveal>
+        <div class="rk-card mv">
+          <span class="mv__icon"><mat-icon>flag</mat-icon></span>
+          <h3>Our Mission</h3>
+          <p>
+            To deliver fast, affordable and honest appliance repair that keeps every South Delhi
+            home running smoothly — with service so good our customers recommend us to friends.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6" appReveal [revealDelay]="120">
+        <div class="rk-card mv">
+          <span class="mv__icon mv__icon--yellow"><mat-icon>visibility</mat-icon></span>
+          <h3>Our Vision</h3>
+          <p>
+            To become Delhi's most trusted home-services brand by combining skilled technicians,
+            genuine parts and technology-driven convenience for every customer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Counters -->
+<section class="counters">
+  <div class="container">
+    <div class="row g-4 text-center">
+      @for (s of stats; track s.label; let i = $index) {
+        <div class="col-6 col-lg-3" appReveal [revealDelay]="i * 100">
+          <div class="counter">
+            <span class="counter__icon"><mat-icon>{{ s.icon }}</mat-icon></span>
+            <span class="counter__num" [countUp]="s.value" [countSuffix]="s.suffix"></span>
+            <span class="counter__label">{{ s.label }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="section-eyebrow">Our Values</span>
+      <h2 class="section-title">What Makes Us <span class="accent">Different</span></h2>
+    </div>
+    <div class="row g-4">
+      @for (v of values; track v.title; let i = $index) {
+        <div class="col-lg-4 col-md-6" appReveal [revealDelay]="i * 80">
+          <div class="rk-card value-card">
+            <span class="value-card__icon"><mat-icon>{{ v.icon }}</mat-icon></span>
+            <div>
+              <h3>{{ v.title }}</h3>
+              <p>{{ v.text }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<app-testimonials></app-testimonials>
+<app-cta-banner></app-cta-banner>

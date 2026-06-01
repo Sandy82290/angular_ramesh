@@ -1,0 +1,52 @@
+<section class="section section--tint">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="section-eyebrow">Testimonials</span>
+      <h2 class="section-title">What Our <span class="accent">Customers Say</span></h2>
+      <p class="section-subtitle">Real reviews from happy families across South Delhi.</p>
+    </div>
+
+    <div class="reviews" appReveal>
+      <button class="reviews__arrow" (click)="prev()" aria-label="Previous review">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+
+      <div class="reviews__viewport">
+        <div class="reviews__track" [style.transform]="'translateX(-' + active() * 100 + '%)'">
+          @for (t of testimonials; track t.name) {
+            <article class="review">
+              <mat-icon class="review__quote">format_quote</mat-icon>
+              <div class="stars" aria-hidden="true">
+                @for (s of stars(t.rating); track $index) { ★ }
+              </div>
+              <p class="review__text">{{ t.text }}</p>
+              <div class="review__author">
+                <span class="review__avatar">{{ t.initial }}</span>
+                <span class="review__meta">
+                  <strong>{{ t.name }}</strong>
+                  <small>{{ t.area }}, South Delhi</small>
+                </span>
+                <mat-icon class="review__verified" title="Verified customer">verified</mat-icon>
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+
+      <button class="reviews__arrow" (click)="next()" aria-label="Next review">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+
+    <div class="reviews__dots">
+      @for (t of testimonials; track t.name; let i = $index) {
+        <button
+          class="reviews__dot"
+          [class.active]="active() === i"
+          (click)="go(i)"
+          [attr.aria-label]="'Show review ' + (i + 1)"
+        ></button>
+      }
+    </div>
+  </div>
+</section>

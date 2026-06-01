@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Deep freezer">
+  <defs>
+    <linearGradient id="dfbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8f0fc"/>
+      <stop offset="1" stop-color="#cfe0fa"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="360" fill="url(#dfbg)"/>
+  <rect x="95" y="135" width="290" height="150" rx="14" fill="#ffffff" stroke="#0d47a1" stroke-width="4"/>
+  <rect x="95" y="135" width="290" height="34" rx="14" fill="#bcd6f7"/>
+  <rect x="120" y="118" width="110" height="20" rx="8" fill="#0d47a1"/>
+  <rect x="250" y="118" width="110" height="20" rx="8" fill="#0d47a1"/>
+  <rect x="120" y="195" width="60" height="8" rx="4" fill="#dceafb"/>
+  <rect x="120" y="218" width="80" height="8" rx="4" fill="#dceafb"/>
+  <rect x="120" y="241" width="50" height="8" rx="4" fill="#dceafb"/>
+  <circle cx="345" cy="225" r="14" fill="#e8f0fc"/>
+  <text x="345" y="232" font-family="Poppins" font-size="16" fill="#0d47a1" text-anchor="middle">❄</text>
+  <circle cx="360" cy="190" r="6" fill="#ffc107"/>
+</svg>

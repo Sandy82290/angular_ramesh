@@ -1,0 +1,101 @@
+.reviews {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 860px;
+  margin: 0 auto;
+
+  &__viewport {
+    overflow: hidden;
+    flex: 1;
+  }
+  &__track {
+    display: flex;
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  &__arrow {
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 0;
+    background: #fff;
+    color: var(--rk-blue);
+    box-shadow: var(--rk-shadow-sm);
+    display: grid;
+    place-items: center;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  &__arrow:hover { background: var(--rk-blue); color: #fff; }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.6rem;
+  }
+  &__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(13, 71, 161, 0.25);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    &.active { background: var(--rk-blue); width: 26px; border-radius: 6px; }
+  }
+}
+
+.review {
+  flex: 0 0 100%;
+  background: #fff;
+  border-radius: var(--rk-radius);
+  box-shadow: var(--rk-shadow-sm);
+  padding: 2.4rem;
+  position: relative;
+
+  &__quote {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.6rem;
+    font-size: 56px;
+    width: 56px;
+    height: 56px;
+    color: rgba(13, 71, 161, 0.1);
+  }
+  &__text {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0.8rem 0 1.6rem;
+    line-height: 1.7;
+  }
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  &__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--rk-blue), var(--rk-blue-light));
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    strong { color: var(--rk-text); }
+    small { color: var(--rk-muted); }
+  }
+  &__verified { margin-left: auto; color: var(--rk-blue); }
+}
+
+@media (max-width: 575.98px) {
+  .reviews__arrow { display: none; }
+  .review { padding: 1.6rem; }
+  .review__text { font-size: 1rem; }
+}
