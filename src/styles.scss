@@ -207,3 +207,10 @@ a:hover { color: var(--rk-blue-light); }
   --mdc-snackbar-supporting-text-color: #fff;
   --mat-snack-bar-button-color: #ffc107;
 }
+
+// Lift the CDK overlay container above the booking modal (.qb = z-index 1700)
+// so mat-select dropdown panels (Appliance Type, etc.) open on top of the
+// modal instead of rendering behind it.
+.cdk-overlay-container {
+  z-index: 1800;
+}

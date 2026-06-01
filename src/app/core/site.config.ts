@@ -9,7 +9,7 @@ export const BUSINESS = {
   phoneDisplay: '70658 89289',
   phoneRaw: '+917065889289',
   whatsapp: '917065889289',
-  email: 'support@rkrepairing.in',
+  email: 'sandeepkumaryadav263@gmail.com',
   addressLine: 'South Delhi, Delhi - 110025',
   area: 'South Delhi',
   city: 'Delhi',
