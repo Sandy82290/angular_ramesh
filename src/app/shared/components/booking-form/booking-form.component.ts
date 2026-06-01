@@ -7,8 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-import { APPLIANCE_OPTIONS } from '../../../core/site.config';
-import { BookingService } from '../../../core/services/booking.service';
+import { APPLIANCE_OPTIONS, bookingWhatsappLink } from '../../../core/site.config';
 
 @Component({
   selector: 'app-booking-form',
@@ -31,7 +30,6 @@ export class BookingFormComponent {
   @Input() compact = false;
 
   private readonly fb = inject(FormBuilder);
-  private readonly bookingService = inject(BookingService);
 
   readonly appliances = APPLIANCE_OPTIONS;
   readonly submitting = signal(false);
@@ -54,21 +52,15 @@ export class BookingFormComponent {
       return;
     }
 
-    this.submitting.set(true);
     const { name, phone, appliance, message } = this.form.getRawValue();
+    const link = bookingWhatsappLink({ name, phone, appliance, message });
 
-    this.bookingService
-      .submitBooking({ name, phone, appliance, message })
-      .subscribe({
-        next: (res) => {
-          this.submitting.set(false);
-          this.successMsg.set(res.message);
-          this.form.reset({ name: '', phone: '', appliance: '', message: '' });
-        },
-        error: () => {
-          this.submitting.set(false);
-          this.errorMsg.set('Something went wrong. Please call us at 70658 89289.');
-        },
-      });
+    // Open WhatsApp with the booking details pre-filled, addressed to the business.
+    window.open(link, '_blank', 'noopener');
+
+    this.successMsg.set(
+      `Thank you ${name}! WhatsApp is opening with your booking details — just tap send and we'll confirm your slot.`
+    );
+    this.form.reset({ name: '', phone: '', appliance: '', message: '' });
   }
 }

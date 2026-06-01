@@ -8,7 +8,7 @@ export const BUSINESS = {
   tagline: 'All Brands Repair Service',
   phoneDisplay: '70658 89289',
   phoneRaw: '+917065889289',
-  whatsapp: '917065889289',
+  whatsapp: '918229039946',
   email: 'sandeepkumaryadav263@gmail.com',
   addressLine: 'South Delhi, Delhi - 110025',
   area: 'South Delhi',
@@ -24,6 +24,25 @@ export const WHATSAPP_LINK = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeUR
 )}`;
 
 export const CALL_LINK = `tel:${BUSINESS.phoneRaw}`;
+
+/** Build a WhatsApp link that pre-fills a booking message to the business. */
+export function bookingWhatsappLink(data: {
+  name: string;
+  phone: string;
+  appliance: string;
+  message?: string;
+}): string {
+  const lines = [
+    '*New Booking — RK Repairing*',
+    `Name: ${data.name}`,
+    `Phone: ${data.phone}`,
+    `Appliance: ${data.appliance}`,
+  ];
+  if (data.message?.trim()) {
+    lines.push(`Message: ${data.message.trim()}`);
+  }
+  return `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(lines.join('\n'))}`;
+}
 
 export interface ServiceItem {
   id: string;
