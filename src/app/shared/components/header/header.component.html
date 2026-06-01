@@ -13,7 +13,7 @@
 </div>
 
 <!-- Main header -->
-<header class="header" [class.header--scrolled]="scrolled()">
+<header class="header" [class.header--scrolled]="scrolled()" [class.header--menu-open]="menuOpen()">
   <div class="container header__inner">
     <a routerLink="/" class="brand" (click)="closeMenu()" aria-label="RK Repairing home">
       <span class="brand__mark"><mat-icon>build</mat-icon></span>

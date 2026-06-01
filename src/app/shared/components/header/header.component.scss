@@ -38,6 +38,13 @@
     box-shadow: 0 6px 24px rgba(13, 71, 161, 0.14);
   }
 
+  /* When the mobile menu is open, lift the whole header (and its trapped
+     slide-in nav) above the overlay (1100) and floating buttons (1500),
+     so the menu links receive taps instead of the overlay. */
+  &--menu-open {
+    z-index: 1600;
+  }
+
   &__inner {
     display: flex;
     align-items: center;
@@ -197,6 +204,12 @@
       margin-top: 0.6rem;
       justify-content: center;
     }
+    a#{&}__cta,
+    a#{&}__cta:hover {
+      color: #fff;
+    }
+    a#{&}__cta::after { display: none; }
+    a#{&}__cta mat-icon { color: #fff; }
   }
 }
 
