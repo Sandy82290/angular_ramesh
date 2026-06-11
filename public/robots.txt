@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.rkrepairing.in/sitemap.xml
+Sitemap: https://rk-repairing.vercel.app/sitemap.xml
