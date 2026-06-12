@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
     this.seo.update({
       title: 'Expert Appliance Repair Services at Your Doorstep',
       description:
-        'RK Repairing offers same-day washing machine, refrigerator, fridge, deep freezer & microwave repair across South Delhi. All brands, doorstep service, genuine spare parts. Call 70658 89289.',
+        'RK Repairing offers same-day washing machine, refrigerator, fridge, deep freezer & microwave repair across South Delhi. All brands, doorstep service, genuine spare parts. Call 82290 39946.',
       keywords:
         'appliance repair South Delhi, washing machine repair, refrigerator repair, microwave repair, same day service',
       path: '/',

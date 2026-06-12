@@ -6,8 +6,8 @@
 export const BUSINESS = {
   name: 'RK Repairing',
   tagline: 'All Brands Repair Service',
-  phoneDisplay: '70658 89289',
-  phoneRaw: '+917065889289',
+  phoneDisplay: '82290 39946',
+  phoneRaw: '+918229039946',
   whatsapp: '918229039946',
   email: 'sandeepkumaryadav263@gmail.com',
   addressLine: 'South Delhi, Delhi - 110025',
@@ -199,7 +199,7 @@ export const FAQS: FaqItem[] = [
   { question: 'Is there a visit or inspection charge?', answer: 'A nominal inspection charge applies, which is fully adjusted in your final repair bill once you approve the work.' },
   { question: 'Do you use genuine spare parts?', answer: 'Absolutely. We only fit authentic, warranty-backed spare parts to ensure long-lasting performance.' },
   { question: 'Do you provide a warranty on repairs?', answer: 'Yes, every repair carries a service warranty. The duration depends on the appliance and the parts replaced.' },
-  { question: 'How do I book a service?', answer: 'Call us at 70658 89289, tap the WhatsApp button, or fill the booking form on this site. We confirm your slot instantly.' },
+  { question: 'How do I book a service?', answer: 'Call us at 82290 39946, tap the WhatsApp button, or fill the booking form on this site. We confirm your slot instantly.' },
 ];
 
 export interface CompanyStat {

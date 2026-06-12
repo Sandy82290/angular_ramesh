@@ -34,7 +34,7 @@ export class ServicesComponent implements OnInit {
     this.seo.update({
       title: 'Appliance Repair Services',
       description:
-        'Detailed washing machine, refrigerator, microwave & deep freezer repair services in South Delhi. All brands — LG, Samsung, IFB, Whirlpool, Bosch. Book online or call 70658 89289.',
+        'Detailed washing machine, refrigerator, microwave & deep freezer repair services in South Delhi. All brands — LG, Samsung, IFB, Whirlpool, Bosch. Book online or call 82290 39946.',
       keywords:
         'washing machine repair, refrigerator repair, microwave repair, deep freezer repair, LG Samsung IFB Whirlpool Bosch service',
       path: '/services',

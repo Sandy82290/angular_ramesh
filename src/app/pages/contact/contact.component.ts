@@ -35,7 +35,7 @@ export class ContactComponent implements OnInit {
     this.seo.update({
       title: 'Contact Us',
       description:
-        'Contact RK Repairing for same-day appliance repair in South Delhi. Call 70658 89289, WhatsApp us, or fill the booking form. Address: South Delhi, Delhi 110025.',
+        'Contact RK Repairing for same-day appliance repair in South Delhi. Call 82290 39946, WhatsApp us, or fill the booking form. Address: South Delhi, Delhi 110025.',
       keywords: 'contact RK Repairing, appliance repair phone number South Delhi, book repair',
       path: '/contact',
     });
