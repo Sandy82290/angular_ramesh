@@ -20,7 +20,12 @@ export const appConfig: ApplicationConfig = {
         scrollPositionRestoration: 'enabled',
         anchorScrolling: 'enabled',
       }),
-      withViewTransitions()
+      withViewTransitions({
+        onViewTransitionCreated: ({ transition }) => {
+          transition.ready.catch(() => {});
+          transition.finished.catch(() => {});
+        },
+      })
     ),
     provideAnimationsAsync(),
     provideHttpClient(withFetch()),
