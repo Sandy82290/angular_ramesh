@@ -3,10 +3,17 @@
 }
 
 .topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  min-height: var(--rk-topbar-h);
   background: var(--rk-blue-dark);
   color: #fff;
   font-size: 0.85rem;
   padding: 0.45rem 0;
+  box-sizing: border-box;
 
   span,
   a {
@@ -27,12 +34,20 @@
 }
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
   background: #fff;
   box-shadow: 0 2px 14px rgba(13, 71, 161, 0.07);
   transition: box-shadow 0.3s ease, padding 0.3s ease;
+
+  /* Desktop: dock below the fixed top utility bar instead of overlapping it. */
+  @media (min-width: 992px) {
+    top: var(--rk-topbar-h);
+  }
 
   &--scrolled {
     box-shadow: 0 6px 24px rgba(13, 71, 161, 0.14);

@@ -1,7 +1,8 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, HostListener, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { BUSINESS, CALL_LINK, WHATSAPP_LINK } from '../../../core/site.config';
+import { UiService } from '../../../core/services/ui.service';
 
 interface NavLink {
   label: string;
@@ -16,6 +17,7 @@ interface NavLink {
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+  readonly ui = inject(UiService);
   readonly business = BUSINESS;
   readonly callLink = CALL_LINK;
   readonly whatsappLink = WHATSAPP_LINK;

@@ -49,7 +49,13 @@
           <strong>{{ business.phoneDisplay }}</strong>
         </span>
       </a>
-      <a routerLink="/contact" class="btn btn-rk-yellow d-none d-sm-inline-flex">Book Service</a>
+      <button
+        type="button"
+        class="btn btn-rk-yellow d-none d-sm-inline-flex"
+        (click)="ui.openQuickBooking()"
+      >
+        Book Service
+      </button>
       <button class="header__burger d-lg-none" (click)="toggleMenu()" aria-label="Open menu">
         <mat-icon>{{ menuOpen() ? 'close' : 'menu' }}</mat-icon>
       </button>
